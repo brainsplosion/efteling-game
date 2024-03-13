@@ -4,7 +4,7 @@
 PlayerSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 24
-  productGUID: b2f337f156adab447adf105b72f36d12
+  productGUID: e7a8a2eb4b5f66548809dd0ee7f40d36
   AndroidProfiler: 0
   AndroidFilterTouchesWhenObscured: 0
   AndroidEnableSustainedPerformanceMode: 0
@@ -13,7 +13,7 @@ PlayerSettings:
   useOnDemandResources: 0
   accelerometerFrequency: 60
   companyName: DefaultCompany
-  productName: efteTale
+  productName: Test movement
   defaultCursor: {fileID: 0}
   cursorHotspot: {x: 0, y: 0}
   m_SplashScreenBackgroundColor: {r: 0.13725491, g: 0.12156863, b: 0.1254902, a: 1}
@@ -718,13 +718,13 @@ PlayerSettings:
     m_VersionCode: 1
     m_VersionName: 
   apiCompatibilityLevel: 6
-  activeInputHandler: 0
+  activeInputHandler: 2
   windowsGamepadBackendHint: 0
-  cloudProjectId: 5271e4d9-a6f4-452f-a44a-0f02272175ea
+  cloudProjectId: 8e1ec147-6c53-4643-ba85-20be6e010af6
   framebufferDepthMemorylessMode: 0
   qualitySettingsNames: []
-  projectName: efteTale
-  organizationId: breadcrafter
+  projectName: Test movement
+  organizationId: creeket
   cloudEnabled: 0
   legacyClampBlendShapeWeights: 0
   playerDataPath: 
