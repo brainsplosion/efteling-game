@@ -353,6 +353,7 @@
 "Assets/Scripts/DamagePopUpAnimation.cs"
 "Assets/Scripts/DamagePopUpGenerator.cs"
 "Assets/Scripts/DamageTester.cs"
+"Assets/Scripts/EnemeyBase.cs"
 "Assets/Scripts/EnemyMoveForward.cs"
 "Assets/Scripts/PlayerController.cs"
 "Assets/Scripts/UIBillboarding.cs"
