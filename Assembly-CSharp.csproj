@@ -96,6 +96,7 @@
     <Compile Include="Assets\Scripts\DamagePopUpGenerator.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_TextSelector_B.cs" />
     <Compile Include="Assets\Scripts\UIBillboarding.cs" />
+    <Compile Include="Assets\Scripts\EnemyBase.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\DropdownSample.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_PhoneNumberValidator.cs" />
     <Compile Include="Assets\Scripts\DamagePopUpAnimation.cs" />
