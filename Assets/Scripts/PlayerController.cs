@@ -8,8 +8,12 @@ using UnityEngine.InputSystem;
 public class PlayerController : MonoBehaviour
 {
     private Vector2 _input;
+    private bool sprinting;
     private CharacterController _characterController;
     private Vector3 _direction;
+
+    [SerializeField] private Animator animator;
+    private float xInput, yInput;
 
     [SerializeField] private float rotationSpeed = 500f;
     private Camera _mainCamera;
@@ -29,15 +33,55 @@ public class PlayerController : MonoBehaviour
     {
         _characterController = GetComponent<CharacterController>();
         _mainCamera = Camera.main;
+        animator = GetComponent<Animator>();
     }
 
     private void Update()
     {
+        getInput();
         ApplyRotation();
         ApplyGravity();
         ApplyMovement();
+        updateAnimation();
+        if(Input.GetKey("left shift"))
+        {
+            sprinting = true;
+        }
+        else
+        {
+            sprinting = false;
+        }
     }
 
+    private void getInput()
+    {
+        xInput = Input.GetAxis("Horizontal");
+        yInput = Input.GetAxis("Vertical");
+    }
+
+    private void updateAnimation()
+    {
+        if (_direction.x > 0 || _direction.z >0 || _direction.z >0 || _direction.z <0)
+        {
+            //moving in animator component becomes true
+            animator.SetBool("Moving", true);
+            if (sprinting == true)
+            {
+                animator.SetBool("Sprinting", true);
+            }
+            else
+            {
+                animator.SetBool("Sprinting", false);
+            }
+        }
+        else
+        {
+            //moving becomes false
+            animator.SetBool("Moving", false);
+            animator.SetBool("Sprinting", false);
+        }
+    }
+    
     private void ApplyGravity()
     {
         if (IsGrounded() && _velocity < 0.0f)
@@ -75,7 +119,12 @@ public class PlayerController : MonoBehaviour
     {
         if (!context.started) return;
         if (!IsGrounded() && _numberOfJumps >= maxNumberOfJumps) return;
-        if (_numberOfJumps == 0) StartCoroutine(routine: WaitForLanding());
+        animator.SetBool("Jumping", true);
+        if (_numberOfJumps == 0)
+        {
+            StartCoroutine(routine: WaitForLanding());
+        }
+ 
         _numberOfJumps++;
         _velocity = jumpPower;
         //_velocity = jumpPower / _numberOfJumps; //Lower Jump power on your second jump in the air
@@ -90,7 +139,7 @@ public class PlayerController : MonoBehaviour
     {
         yield return new WaitUntil(() => !IsGrounded());
         yield return new WaitUntil(IsGrounded);
-
+        animator.SetBool("Jumping", false);
         _numberOfJumps = 0;
     }
 
