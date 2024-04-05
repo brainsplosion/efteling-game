@@ -9,6 +9,7 @@ public class EnemyBase : MonoBehaviour
     Rigidbody body;
     [SerializeField] public float MoveSpeed = 4f;
     [SerializeField] public int MinDist = 7;
+    private Vector3 KDirect;
     public Transform Player;
     // Start is called before the first frame update
     void Start()
@@ -25,15 +26,20 @@ public class EnemyBase : MonoBehaviour
             transform.LookAt(Player);
             transform.position += transform.forward * MoveSpeed * Time.deltaTime;
             if (Vector3.Distance(transform.position, Player.position) <= 1)
+            {
                 Knockback(3);
-
+            }
         }
+
 
     }
 
-    private void Knockback(int Distance)
+    private void Knockback(int strength)
     {
-        body.AddForce(transform.position * -Distance);
+        KDirect = new Vector3(transform.position.x - Player.position.x, 0, transform.position.z - Player.position.z);
+        KDirect = KDirect.normalized * strength;
+        body.AddForce(KDirect, ForceMode.Impulse);
+        //body.AddForce(Player.position - transform.position, ForceMode.Force);
         //transform.position -= transform.forward * Distance;
     }
 }
