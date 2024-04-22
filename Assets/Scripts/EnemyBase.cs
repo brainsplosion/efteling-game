@@ -34,7 +34,7 @@ public class EnemyBase : MonoBehaviour
 
     }
 
-    private void Knockback(int strength)
+    public void Knockback(int strength)
     {
         KDirect = new Vector3(transform.position.x - Player.position.x, 0, transform.position.z - Player.position.z);
         KDirect = KDirect.normalized * strength;

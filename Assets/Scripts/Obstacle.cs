@@ -4,11 +4,9 @@ using UnityEngine;
 public class Obstacle : MonoBehaviour
 {
     private int Health = 4;
-    
     // Start is called before the first frame update
     void Start()
     {
-        
     }
 
     // Update is called once per frame
@@ -19,6 +17,7 @@ public class Obstacle : MonoBehaviour
 
     public void HandleDamage(int damage)
     {
+        gameObject.GetComponent<Renderer>().material.color = Color.red;
         Health -= damage;
         if (Health <= 0)
             CommitDie();
@@ -29,4 +28,5 @@ public class Obstacle : MonoBehaviour
         Destroy(gameObject);
 
     }
+
 }

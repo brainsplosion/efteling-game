@@ -51,6 +51,10 @@ public class PlayerController : MonoBehaviour
         {
             sprinting = false;
         }
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            UnityEditor.EditorWindow.focusedWindow.maximized = !UnityEditor.EditorWindow.focusedWindow.maximized;
+        }
     }
 
     private void getInput()

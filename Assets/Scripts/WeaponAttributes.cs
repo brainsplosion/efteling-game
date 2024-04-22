@@ -16,8 +16,9 @@ public class WeaponAttributes : MonoBehaviour
         else if (other.CompareTag("Enemy"))
         {
             other.GetComponent<AttributesManager>().TakeDamage(atm.attack);
+            other.GetComponent<EnemyBase>().Knockback(10);
         }
-        
+
     }
 
 
