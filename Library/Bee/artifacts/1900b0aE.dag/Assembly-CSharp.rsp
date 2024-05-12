@@ -359,6 +359,7 @@
 "Assets/Scripts/EnemyMoveForward.cs"
 "Assets/Scripts/Obstacle.cs"
 "Assets/Scripts/PlayerController.cs"
+"Assets/Scripts/SpawnLogic.cs"
 "Assets/Scripts/UIBillboarding.cs"
 "Assets/Scripts/WeaponAttributes.cs"
 "Assets/Scripts/WeaponManager.cs"
