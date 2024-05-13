@@ -34,7 +34,6 @@ public class PlayerController : MonoBehaviour
         _characterController = GetComponent<CharacterController>();
         _mainCamera = Camera.main;
         animator = GetComponent<Animator>();
-        Cursor.lockState = CursorLockMode.Locked;
     }
 
     private void Update()
@@ -55,13 +54,6 @@ public class PlayerController : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Escape))
         {
             UnityEditor.EditorWindow.focusedWindow.maximized = !UnityEditor.EditorWindow.focusedWindow.maximized;
-        }
-        if (Input.GetKeyDown(KeyCode.Tab))
-        {
-            if (Cursor.lockState == CursorLockMode.Locked)
-                Cursor.lockState = CursorLockMode.None;
-            else if (Cursor.lockState == CursorLockMode.None)
-                Cursor.lockState = CursorLockMode.Locked;
         }
     }
 
