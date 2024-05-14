@@ -21,7 +21,7 @@ public class EnemyBase : MonoBehaviour
     void Update()
     {
 
-        if (Vector3.Distance(transform.position, Player.position) <= MinDist)
+        /*if (Vector3.Distance(transform.position, Player.position) <= MinDist)
         {
             transform.LookAt(Player);
             transform.position += transform.forward * MoveSpeed * Time.deltaTime;
@@ -29,6 +29,12 @@ public class EnemyBase : MonoBehaviour
             {
                 Knockback(3);
             }
+        }*/
+        transform.LookAt(Player);
+        transform.position += transform.forward * MoveSpeed * Time.deltaTime;
+        if (Vector3.Distance(transform.position, Player.position) <= 1)
+        {
+            Knockback(3);
         }
 
 

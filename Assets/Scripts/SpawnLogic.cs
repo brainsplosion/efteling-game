@@ -24,7 +24,12 @@ public class SpawnLogic : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
+        if (Input.GetKeyDown(KeyCode.I))
+        {
+            Spawn(0);
+            Spawn(0);
+            Spawn(0);
+        }
     }
 
 
