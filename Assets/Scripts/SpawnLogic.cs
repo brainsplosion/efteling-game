@@ -30,6 +30,10 @@ public class SpawnLogic : MonoBehaviour
             Spawn(0);
             Spawn(0);
         }
+        if (Input.GetKeyDown(KeyCode.O))
+        {
+            Debug.Log(surviving.Count);
+        }
     }
 
 
@@ -37,7 +41,13 @@ public class SpawnLogic : MonoBehaviour
     {
         int randomSpot = Random.Range(0, spawners.Count);
         Vector3 location = new Vector3(spawners[randomSpot].transform.position.x, spawners[randomSpot].transform.position.y, spawners[randomSpot].transform.position.z);
-        GameObject currentEnemy = Instantiate(enemies[species], location, Quaternion.identity);
-        surviving.Add(currentEnemy);
+        GameObject currentEnemy = (GameObject) Instantiate(enemies[species], location, Quaternion.identity);
+        surviving.Add(currentEnemy as GameObject);
+    }
+
+    public void HandleDeath()
+    {
+
+
     }
 }

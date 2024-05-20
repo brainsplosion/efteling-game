@@ -10,11 +10,13 @@ public class EnemyBase : MonoBehaviour
     [SerializeField] public float MoveSpeed = 4f;
     [SerializeField] public int MinDist = 7;
     private Vector3 KDirect;
-    public Transform Player;
+    private Transform Player;
     // Start is called before the first frame update
     void Start()
     {
         body = GetComponent<Rigidbody>();
+        GameObject tempTarget = GameObject.FindGameObjectWithTag("Player");
+        Player = tempTarget.transform;
     }
 
     // Update is called once per frame
