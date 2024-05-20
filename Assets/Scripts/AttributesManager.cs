@@ -6,14 +6,6 @@ public class AttributesManager : MonoBehaviour
 {
     public int health = 100;
     public int attack;
-    private Animator _animator;
-    public bool isDead
-    {
-        get
-        {
-            return health == 0; 
-        }
-    }
 
 
     public void TakeDamage(int amount)
@@ -32,25 +24,9 @@ public class AttributesManager : MonoBehaviour
         if (atm != null)
         {
             atm.TakeDamage(attack);
-
-            if (atm.isDead)
-            {
-                // Trigger death animation
-                atm.Death();
-            }
+        }
         }
     }
 
-    private void Death()
-    {
-        if (isDead)
-        {
-            _animator.SetTrigger("Death");
-        }
-    }
 
-    public void Start()
-    {
-        _animator = GetComponent<Animator>();
-    }
-}
+   

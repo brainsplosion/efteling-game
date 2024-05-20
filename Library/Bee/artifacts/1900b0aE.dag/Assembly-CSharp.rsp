@@ -354,6 +354,7 @@
 "Assets/Scripts/DamagePopUpAnimation.cs"
 "Assets/Scripts/DamagePopUpGenerator.cs"
 "Assets/Scripts/EnemyBase.cs"
+"Assets/Scripts/EnemyDeath.cs"
 "Assets/Scripts/EnemyMoveForward.cs"
 "Assets/Scripts/Obstacle.cs"
 "Assets/Scripts/PlayerController.cs"
