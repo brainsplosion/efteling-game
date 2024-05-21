@@ -4,8 +4,6 @@ using UnityEngine;
 
 public class EnemyDeath : MonoBehaviour
 {   //WHY WONT YOU WORK!!!!!!!!!!!
-    public int maxHealth;
-    public int currentHealth;
     public AttributesManager stats;
 
     private Animator animator;
@@ -13,7 +11,6 @@ public class EnemyDeath : MonoBehaviour
 
     void Start()
     {
-        currentHealth = maxHealth;
         animator = GetComponent<Animator>();
         stats = GetComponent<AttributesManager>(); //need to add to stop null 
     }
@@ -27,28 +24,17 @@ public class EnemyDeath : MonoBehaviour
         }
       
     }
-    public void TakeDamage(int damage)
-    {
-        if (isDead)
-            return;
-
-        currentHealth -= damage;
-
-        if (currentHealth <= 0)
-        {
-            Die();
-        }
-    }
 
     public void Die()
     {
         isDead = true;
         animator.SetBool("isDead", true);
-
+        GetComponent<Rigidbody>().isKinematic = true;
+        GetComponent<EnemyBase>().enabled = false;
         GetComponent<Collider>().enabled = false; // Disable the collider to stop further collisions
         this.enabled = false; // Disable this script to stop it from running further
 
-        Destroy(gameObject, 5f);
+        Destroy(gameObject, 5);
     }
 
     
