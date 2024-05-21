@@ -42,7 +42,7 @@ public class SpawnLogic : MonoBehaviour
         int randomSpot = Random.Range(0, spawners.Count);
         Vector3 location = new Vector3(spawners[randomSpot].transform.position.x, spawners[randomSpot].transform.position.y, spawners[randomSpot].transform.position.z);
         GameObject currentEnemy = (GameObject) Instantiate(enemies[species], location, Quaternion.identity);
-        surviving.Add(currentEnemy as GameObject);
+        //surviving.Add(currentEnemy as GameObject);
     }
 
     public void HandleDeath()

@@ -5,7 +5,8 @@ using UnityEngine;
 public class EnemyDeath : MonoBehaviour
 {   //WHY WONT YOU WORK!!!!!!!!!!!
     public int maxHealth;
-    private int currentHealth;
+    public int currentHealth;
+    public AttributesManager stats;
 
     private Animator animator;
     private bool isDead = false;
@@ -14,8 +15,18 @@ public class EnemyDeath : MonoBehaviour
     {
         currentHealth = maxHealth;
         animator = GetComponent<Animator>();
+        stats = GetComponent<AttributesManager>(); //need to add to stop null 
     }
 
+    public void Update()
+    {
+        if(stats.health <= 0)
+        {
+            Debug.Log("it work");
+            Die();
+        }
+      
+    }
     public void TakeDamage(int damage)
     {
         if (isDead)
@@ -29,7 +40,7 @@ public class EnemyDeath : MonoBehaviour
         }
     }
 
-    void Die()
+    public void Die()
     {
         isDead = true;
         animator.SetBool("isDead", true);
@@ -39,4 +50,6 @@ public class EnemyDeath : MonoBehaviour
 
         Destroy(gameObject, 5f);
     }
+
+    
 }
