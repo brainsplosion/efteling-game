@@ -16,5 +16,9 @@ public class AttackControl : MonoBehaviour
         {
             anim.SetTrigger("Attack");
         }
+        if(Input.GetKeyDown(KeyCode.Mouse1))
+        {
+            anim.SetTrigger("Attack2");
+        }
     }
 }
