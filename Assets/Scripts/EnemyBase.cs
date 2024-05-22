@@ -32,7 +32,7 @@ public class EnemyBase : MonoBehaviour
                 Knockback(3);
             }
         }*/
-        transform.LookAt(Player);
+        transform.LookAt(new Vector3(Player.position.x, transform.position.y, Player.position.z));
         transform.position += transform.forward * MoveSpeed * Time.deltaTime;
         if (Vector3.Distance(transform.position, Player.position) <= 1)
         {
