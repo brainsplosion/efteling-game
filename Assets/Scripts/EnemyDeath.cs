@@ -5,12 +5,13 @@ using UnityEngine;
 public class EnemyDeath : MonoBehaviour
 {   //WHY WONT YOU WORK!!!!!!!!!!!
     public AttributesManager stats;
-
+    private SpawnLogic spawnLogic;
     private Animator animator;
     private bool isDead = false;
 
     void Start()
     {
+        spawnLogic = GetComponentInParent<SpawnLogic>();
         animator = GetComponent<Animator>();
         stats = GetComponent<AttributesManager>(); //need to add to stop null 
     }
@@ -35,7 +36,9 @@ public class EnemyDeath : MonoBehaviour
         this.enabled = false; // Disable this script to stop it from running further
 
         Destroy(gameObject, 5);
+        spawnLogic.waves[spawnLogic.currentWaveDir].Alive--;
+
     }
 
-    
+
 }
