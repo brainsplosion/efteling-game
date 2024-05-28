@@ -651,6 +651,10 @@ MonoBehaviour:
     timeToNextWave: 2
     Alive: 0
   spawn: {fileID: 562224477}
+  species:
+  - {fileID: 7556610354537453754, guid: 548c7b7e05902fa489e03043a2da747d, type: 3}
+  - {fileID: 7556610354537453754, guid: 44cd189a4e8da2a45b8adb41a351f164, type: 3}
+  - {fileID: 7556610354537453754, guid: 549d5828017472042b60ad8590a6e2ad, type: 3}
   currentWaveDir: 0
   spawners:
   - {fileID: 621715312}

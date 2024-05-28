@@ -8,6 +8,7 @@ public class SpawnLogic : MonoBehaviour
     [SerializeField] private float countdown;
     [SerializeField] public Wave[] waves;
     [SerializeField] private GameObject spawn;
+    public List<GameObject> species;
     public int currentWaveDir = 0;
     public List<GameObject> spawners;
     private bool readyToStart;
