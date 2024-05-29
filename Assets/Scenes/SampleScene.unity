@@ -615,7 +615,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 111293564}
-  - component: {fileID: 111293563}
+  - component: {fileID: 111293565}
   m_Layer: 0
   m_Name: SpawnLogic
   m_TagString: Untagged
@@ -623,43 +623,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &111293563
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 111293562}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9d1053ddc29862a429f40ed757c9c416, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  countdown: 3
-  waves:
-  - enemies:
-    - {fileID: 2167317793156554399, guid: 548c7b7e05902fa489e03043a2da747d, type: 3}
-    - {fileID: 2167317793156554399, guid: 548c7b7e05902fa489e03043a2da747d, type: 3}
-    timeToNextEnemy: 2
-    timeToNextWave: 2
-    Alive: 0
-  - enemies:
-    - {fileID: 2167317793156554399, guid: 548c7b7e05902fa489e03043a2da747d, type: 3}
-    - {fileID: 2167317793156554399, guid: 548c7b7e05902fa489e03043a2da747d, type: 3}
-    - {fileID: 2167317793156554399, guid: 548c7b7e05902fa489e03043a2da747d, type: 3}
-    timeToNextEnemy: 2
-    timeToNextWave: 2
-    Alive: 0
-  spawn: {fileID: 562224477}
-  species:
-  - {fileID: 7556610354537453754, guid: 548c7b7e05902fa489e03043a2da747d, type: 3}
-  - {fileID: 7556610354537453754, guid: 44cd189a4e8da2a45b8adb41a351f164, type: 3}
-  - {fileID: 7556610354537453754, guid: 549d5828017472042b60ad8590a6e2ad, type: 3}
-  currentWaveDir: 0
-  spawners:
-  - {fileID: 621715312}
-  - {fileID: 1389713068}
-  - {fileID: 1288625721}
 --- !u!4 &111293564
 Transform:
   m_ObjectHideFlags: 0
@@ -679,6 +642,43 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 19
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &111293565
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 111293562}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9d1053ddc29862a429f40ed757c9c416, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  countdown: 5
+  waves:
+  - timeToNextEnemy: 2
+    timeToNextWave: 5
+    amount: 7
+    chanceShoot: 10
+    chanceFloat: 20
+    Alive: 0
+  - timeToNextEnemy: 2
+    timeToNextWave: 5
+    amount: 3
+    chanceShoot: 30
+    chanceFloat: 0
+    Alive: 0
+  spawn: {fileID: 562224477}
+  species:
+  - {fileID: 7556610354537453754, guid: 548c7b7e05902fa489e03043a2da747d, type: 3}
+  - {fileID: 7556610354537453754, guid: 44cd189a4e8da2a45b8adb41a351f164, type: 3}
+  - {fileID: 7556610354537453754, guid: 549d5828017472042b60ad8590a6e2ad, type: 3}
+  currentWaveDir: 0
+  spawners:
+  - {fileID: 621715312}
+  - {fileID: 1389713068}
+  - {fileID: 1288625721}
+  model: {fileID: 0}
 --- !u!1001 &112008633
 PrefabInstance:
   m_ObjectHideFlags: 0

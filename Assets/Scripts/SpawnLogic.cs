@@ -11,24 +11,17 @@ public class SpawnLogic : MonoBehaviour
     public List<GameObject> species;
     public int currentWaveDir = 0;
     public List<GameObject> spawners;
+    public GameObject model; // new
     private bool readyToStart;
-    /*public List<GameObject> enemies = new List<GameObject>();
-    private List<GameObject> surviving;*/
-
-    /*private bool activeWave()
-    {
-        surviving = surviving.Where(e => e != null).ToList();
-        return surviving.Count > 0;
-    }*/
     // Start is called before the first frame update
     private void Start()
     {
         readyToStart = true;
         for (int i =0; i < waves.Length; i++)
         {
-            waves[i].Alive = waves[i].enemies.Length;
+            waves[i].Alive = waves[i].amount;
         }
-        //Spawn(0);
+        
     }
 
     // Update is called once per frame
@@ -58,25 +51,28 @@ public class SpawnLogic : MonoBehaviour
             readyToStart = true;
             currentWaveDir++;
         }
-        /*
-        if (Input.GetKeyDown(KeyCode.I))
-        {
-            Spawn(0);
-        }
-        if (Input.GetKeyDown(KeyCode.O))
-        {
-            Debug.Log(surviving.Count);
-        }*/
+
     }
 
     private IEnumerator spawnWave()
     {
         if (currentWaveDir < waves.Length)
         {
-            for (int i = 0; i < waves[currentWaveDir].enemies.Length; i++)
+            for (int i = 0; i < waves[currentWaveDir].amount; i++)
             {
+                int chooser = Random.Range(1, 100);
+                //code below randomly assigns what kind of enemy to spawn based on chances
+                if (chooser <= waves[currentWaveDir].chanceShoot + waves[currentWaveDir].chanceFloat)
+                {
+                    if (chooser <= waves[currentWaveDir].chanceShoot)
+                    { model = species[1]; }
+                    else
+                    { model = species[2]; }
+                }
+                else
+                { model = species[0]; }
                 GameObject spawnpoint = spawners[Random.Range(0, spawners.Count)];
-                EnemyDeath enemy = Instantiate(waves[currentWaveDir].enemies[i], spawnpoint.transform);
+                GameObject enemy = Instantiate(model, spawnpoint.transform);
                 enemy.transform.SetParent(spawn.transform);
                 yield return new WaitForSeconds(waves[currentWaveDir].timeToNextEnemy);
             }
@@ -84,23 +80,17 @@ public class SpawnLogic : MonoBehaviour
         
     }
 
-    /*private void Spawn(int species)
-    {
-        int randomSpot = Random.Range(0, spawners.Count);
-        Vector3 location = new Vector3(spawners[randomSpot].transform.position.x, spawners[randomSpot].transform.position.y, spawners[randomSpot].transform.position.z);
-        GameObject currentEnemy = (GameObject) Instantiate(enemies[species], location, Quaternion.identity);
-        currentEnemy.transform.parent = GameObject.Find("Spawn logic").transform;
-        surviving.Add(currentEnemy as GameObject);
-    }*/
 
 }
 
 [System.Serializable]
 public class Wave
 {
-    public EnemyDeath[] enemies;
     public float timeToNextEnemy;
     public float timeToNextWave;
+    public int amount; //number of enemies in wave
+    public int chanceShoot; //percentage of enemies spawned being shooter, 10 will be 10% for example, disclaimer: chanceShoot + Float should never be more than 99
+    public int chanceFloat;
 
     [HideInInspector] public int Alive;
 }
