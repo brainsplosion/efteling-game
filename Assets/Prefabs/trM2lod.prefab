@@ -178,6 +178,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3792741304454937575}
   - component: {fileID: 3345765334401188054}
+  - component: {fileID: 1747080191899267174}
   m_Layer: 0
   m_Name: trM2lod
   m_TagString: Untagged
@@ -194,8 +195,8 @@ Transform:
   m_GameObject: {fileID: 4605307423887761757}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 1.7, y: 1.7, z: 1.7}
+  m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 2357749747670350025}
   - {fileID: 3299595641146652130}
@@ -230,6 +231,20 @@ LODGroup:
     renderers:
     - renderer: {fileID: 4132902059218972259}
   m_Enabled: 1
+--- !u!136 &1747080191899267174
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4605307423887761757}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 0.7206131
+  m_Height: 5.013435
+  m_Direction: 1
+  m_Center: {x: -0.39812195, y: 1.7204664, z: 0.028474927}
 --- !u!1 &8604043319054571533
 GameObject:
   m_ObjectHideFlags: 0
