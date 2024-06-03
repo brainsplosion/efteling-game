@@ -8,6 +8,7 @@ public class MenuManager : MonoBehaviour
     [SerializeField] private GameObject menuPanel;
     [SerializeField] private Button[] menuButtons;
     [SerializeField] private GameObject skillTreePanel;
+    [SerializeField] private GameObject optionsPanel;
     [SerializeField] private PlayerController playerController;
     [SerializeField] private CameraManager cameraManager;
     private bool showMenu = false;
@@ -59,7 +60,7 @@ public class MenuManager : MonoBehaviour
     {
         //Redirects to another panel
         menuPanel.SetActive(false);
-        //optionsPanel.SetActive(true);
+        optionsPanel.SetActive(true);
     }
     
     public void SkillTree()
@@ -74,6 +75,13 @@ public class MenuManager : MonoBehaviour
     {
         //Redirects to another panel
         skillTreePanel.SetActive(false);
+        menuPanel.SetActive(true);
+    }
+
+    public void BackTwo()
+    {
+        //Redirects to another panel
+        optionsPanel.SetActive(false);
         menuPanel.SetActive(true);
     }
 
