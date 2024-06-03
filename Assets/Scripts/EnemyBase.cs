@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.AI;
 
 public class EnemyBase : MonoBehaviour
 {
@@ -11,18 +12,20 @@ public class EnemyBase : MonoBehaviour
     [SerializeField] public int MinDist = 7;
     private Vector3 KDirect;
     private Transform Player;
+    private NavMeshAgent nav;
     // Start is called before the first frame update
     void Start()
     {
         body = GetComponent<Rigidbody>();
         GameObject tempTarget = GameObject.FindGameObjectWithTag("Player");
         Player = tempTarget.transform;
+        nav = GetComponent<NavMeshAgent>();
+        nav.speed = MoveSpeed;
     }
 
     // Update is called once per frame
     void Update()
     {
-
         /*if (Vector3.Distance(transform.position, Player.position) <= MinDist)
         {
             transform.LookAt(Player);
@@ -32,8 +35,9 @@ public class EnemyBase : MonoBehaviour
                 Knockback(3);
             }
         }*/
-        transform.LookAt(new Vector3(Player.position.x, transform.position.y, Player.position.z));
-        transform.position += transform.forward * MoveSpeed * Time.deltaTime;
+        /*transform.LookAt(new Vector3(Player.position.x, transform.position.y, Player.position.z));
+        /*transform.position += transform.forward * MoveSpeed * Time.deltaTime;*/
+        nav.destination = Player.position;
         if (Vector3.Distance(transform.position, Player.position) <= 1)
         {
             Knockback(3);
