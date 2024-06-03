@@ -9,11 +9,13 @@ public class DraggableItem3 : MonoBehaviour, IBeginDragHandler, IEndDragHandler,
     Image image;
     CanvasGroup group;
     public Transform parentAfterDrag;
+    public GameObject speedDescription;
 
     public void Start()
     {
         image = GetComponent<Image>();
         group = GetComponent<CanvasGroup>();
+        speedDescription.SetActive(false);
     }
 
     public void OnBeginDrag(PointerEventData eventData)
@@ -24,6 +26,7 @@ public class DraggableItem3 : MonoBehaviour, IBeginDragHandler, IEndDragHandler,
 
         group.alpha = .5f;
         image.raycastTarget = false;
+        speedDescription.SetActive(true);
     }
 
     public void OnDrag(PointerEventData eventData)
@@ -37,6 +40,7 @@ public class DraggableItem3 : MonoBehaviour, IBeginDragHandler, IEndDragHandler,
 
         group.alpha = 1f;
         image.raycastTarget = true;
+        speedDescription.SetActive(false);
     }
 
 }
