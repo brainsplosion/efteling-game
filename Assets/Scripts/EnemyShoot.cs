@@ -32,7 +32,7 @@ public class EnemyShoot : EnemyBase
             {
                 transform.LookAt(Player);
                 GameObject temp = Instantiate(bullet, transform.position, transform.rotation);
-                temp.transform.SetParent(this.transform);
+                //temp.transform.SetParent(this.transform);
                 timer = 0;
             }
             /*transform.LookAt(Player);
