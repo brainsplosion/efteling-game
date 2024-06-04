@@ -7,12 +7,12 @@ using UnityEngine.AI;
 
 public class EnemyBase : MonoBehaviour
 {
-    Rigidbody body;
+    public Rigidbody body;
     [SerializeField] public float MoveSpeed = 4f;
     [SerializeField] public int MinDist = 7;
-    private Vector3 KDirect;
-    private Transform Player;
-    private NavMeshAgent nav;
+    public Vector3 KDirect;
+    public Transform Player;
+    public NavMeshAgent nav;
     // Start is called before the first frame update
     void Start()
     {
