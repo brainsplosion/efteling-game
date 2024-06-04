@@ -2772,12 +2772,12 @@ GameObject:
   - component: {fileID: 8259954599120874553}
   - component: {fileID: 542817295637519432}
   - component: {fileID: 9099306305668684865}
-  - component: {fileID: 7326752637792737566}
   - component: {fileID: 1867966597881642714}
   - component: {fileID: 1622553532096317115}
   - component: {fileID: 1477870093444949674}
   - component: {fileID: 8073427391195547264}
   - component: {fileID: -4469787864294650918}
+  - component: {fileID: -8824390797319117070}
   m_Layer: 0
   m_Name: Enemy_Fly
   m_TagString: Enemy
@@ -2879,20 +2879,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: 30
   attack: 5
---- !u!114 &7326752637792737566
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7084116160793354383}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5197eb1290923934d804f6bfe6de4fdf, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  MoveSpeed: 4.5
-  MinDist: 12
 --- !u!54 &1867966597881642714
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -2977,6 +2963,20 @@ NavMeshAgent:
   m_BaseOffset: 1
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
+--- !u!114 &-8824390797319117070
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7084116160793354383}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6a3cc4002153fe84ebb096a050295f95, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  MoveSpeed: 4.5
+  MinDist: 12
 --- !u!1 &7323510192841096245
 GameObject:
   m_ObjectHideFlags: 0
