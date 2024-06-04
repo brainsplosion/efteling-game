@@ -6224,8 +6224,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5197eb1290923934d804f6bfe6de4fdf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  body: {fileID: 0}
   MoveSpeed: 4.5
   MinDist: 12
+  KDirect: {x: 0, y: 0, z: 0}
+  Player: {fileID: 0}
+  nav: {fileID: 0}
 --- !u!54 &1346872371
 Rigidbody:
   m_ObjectHideFlags: 0
