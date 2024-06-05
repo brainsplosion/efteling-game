@@ -6,7 +6,7 @@ using UnityEngine;
 public class WeaponAttributes : MonoBehaviour
 {
     //public AttributesManager attributesManager;
-    [SerializeField] private float weaponDamage = 10f;
+    [SerializeField] private int weaponDamage = 10;
 
     private void OnTriggerEnter(Collider other)
     {
