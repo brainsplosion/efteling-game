@@ -9,6 +9,7 @@ public class MenuManager : MonoBehaviour
     [SerializeField] private Button[] menuButtons;
     [SerializeField] private GameObject skillTreePanel;
     [SerializeField] private GameObject optionsPanel;
+    [SerializeField] private GameObject HUD;
     [SerializeField] private PlayerController playerController;
     [SerializeField] private CameraManager cameraManager;
     private bool showMenu = false;
@@ -33,12 +34,13 @@ public class MenuManager : MonoBehaviour
     {
         Time.timeScale = 0;
         //pausing the game
-         menuPanel.SetActive(true);
+        menuPanel.SetActive(true);
         showMenu = true;
 
         Cursor.lockState = CursorLockMode.Confined;
         playerController.enabled = false;
         cameraManager.enabled = false;
+        HUD.SetActive(false);
 
         ResetButtonStates();
     }
@@ -51,6 +53,7 @@ public class MenuManager : MonoBehaviour
         Cursor.lockState = CursorLockMode.Locked;
         playerController.enabled = true;
         cameraManager.enabled = true;
+        HUD.SetActive(true);
         //Other behaviors: locking back mouse, enable camera, enable movement and aiming
 
         ResetButtonStates();

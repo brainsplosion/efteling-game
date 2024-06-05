@@ -5,7 +5,8 @@ using UnityEngine;
 
 public class WeaponAttributes : MonoBehaviour
 {
-    public AttributesManager atm;
+    //public AttributesManager attributesManager;
+    [SerializeField] private float weaponDamage = 10f;
 
     private void OnTriggerEnter(Collider other)
     {
@@ -15,7 +16,7 @@ public class WeaponAttributes : MonoBehaviour
         }
         else if (other.CompareTag("Enemy"))
         {
-            other.GetComponent<AttributesManager>().TakeDamage(atm.attack);
+            other.GetComponent<AttributesManager>().TakeDamage(weaponDamage);
             other.GetComponent<EnemyBase>().Knockback(10);
         }
 

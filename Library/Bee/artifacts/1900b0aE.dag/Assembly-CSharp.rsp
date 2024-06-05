@@ -366,6 +366,7 @@
 "Assets/Scripts/EnemyFly.cs"
 "Assets/Scripts/EnemyMoveForward.cs"
 "Assets/Scripts/EnemyShoot.cs"
+"Assets/Scripts/HealthManager.cs"
 "Assets/Scripts/ItemSlot.cs"
 "Assets/Scripts/ItemSlot2.cs"
 "Assets/Scripts/ItemSlot3.cs"

@@ -26,8 +26,8 @@ public class BulletLogic : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-            var atm = other.GetComponent<AttributesManager>();
-            atm.TakeDamage(10);
+            var attributesManager = other.GetComponent<AttributesManager>();
+            attributesManager.TakeDamage(10);
             Destroy(gameObject);
         }
     }
