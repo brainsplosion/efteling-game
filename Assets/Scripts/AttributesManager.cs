@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class AttributesManager : MonoBehaviour
 {
-    public int health = 100;
+    public int health;
     public int attack;
 
 
@@ -25,9 +25,9 @@ public class AttributesManager : MonoBehaviour
         {
             atm.TakeDamage(attack);
         }
-        }
-
     }
+
+}
 
 
    
