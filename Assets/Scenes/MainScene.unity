@@ -1346,12 +1346,12 @@ MonoBehaviour:
     timeToNextWave: 5
     amount: 7
     chanceShoot: 10
-    chanceFloat: 20
+    chanceFloat: 30
     Alive: 0
   - timeToNextEnemy: 2
     timeToNextWave: 5
     amount: 3
-    chanceShoot: 30
+    chanceShoot: 20
     chanceFloat: 40
     Alive: 0
   - timeToNextEnemy: 2
@@ -1374,9 +1374,9 @@ MonoBehaviour:
     Alive: 0
   spawn: {fileID: 562224477}
   species:
-  - {fileID: 7556610354537453754, guid: 1a5bf9874f2de4348bb708d72f0e2327, type: 3}
-  - {fileID: 7084116160793354383, guid: de4fe0c5a281c6c4eacc7890af192c63, type: 3}
   - {fileID: 7556610354537453754, guid: 549d5828017472042b60ad8590a6e2ad, type: 3}
+  - {fileID: 7556610354537453754, guid: 1a5bf9874f2de4348bb708d72f0e2327, type: 3}
+  - {fileID: 6633575480687018602, guid: 417a0b0f33f95774ab4172efe00cdfdc, type: 3}
   currentWaveDir: 0
   spawners:
   - {fileID: 621715312}
@@ -10683,12 +10683,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   target: {fileID: 1408183274}
   mouseSensitivity:
-    horizontal: 40
-    vertical: 40
-    invertVertical: 1
+    horizontal: 15
+    vertical: 15
+    invertVertical: 0
     invertHorizontal: 1
   cameraAngle:
-    min: 10
+    min: 0
     max: 50
 --- !u!4 &964527649 stripped
 Transform:
@@ -30037,7 +30037,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -5.000122, y: 0}
+  m_AnchoredPosition: {x: -5.000244, y: 0}
   m_SizeDelta: {x: 9.9999, y: 20}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &7826442859581800748

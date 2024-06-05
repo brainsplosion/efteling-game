@@ -112,8 +112,9 @@ public class PlayerController : MonoBehaviour
         if (_input.sqrMagnitude == 0) return; //If there is no input, dont move (prevents from rotating back at 0 angle whenever not moving)
         _direction = Quaternion.Euler(0.0f, _mainCamera.transform.eulerAngles.y, 0.0f) * new Vector3(_input.x, 0.0f, _input.y);
         var targetRotation = Quaternion.LookRotation(_direction, Vector3.up);
-
-        transform.rotation = Quaternion.RotateTowards(transform.rotation, targetRotation, rotationSpeed * Time.deltaTime);
+        
+        /*transform.rotation = Quaternion.RotateTowards(transform.rotation, targetRotation, rotationSpeed * Time.deltaTime);*/ //replace transform line underneath with this to not make player look at middle of screen
+        transform.localEulerAngles = new Vector3(transform.localEulerAngles.x, Camera.main.transform.localEulerAngles.y, transform.localEulerAngles.z);
     }
 
     private void ApplyMovement ()

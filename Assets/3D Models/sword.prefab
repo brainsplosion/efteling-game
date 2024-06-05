@@ -226,4 +226,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 394e637080faa5b46998b04aee90f02f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  atm: {fileID: 0}
+  weaponDamage: 10
