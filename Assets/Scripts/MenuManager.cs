@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class MenuManager : MonoBehaviour
 {
@@ -91,7 +92,11 @@ public class MenuManager : MonoBehaviour
     public void Exit()
     {
         //Exits the game
-        Application.Quit();
+        //Application.Quit();
+        Time.timeScale = 1;
+        Cursor.lockState = CursorLockMode.None;
+        ResetButtonStates();
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 1); // new
     }
 
     public void ResetButtonStates()
