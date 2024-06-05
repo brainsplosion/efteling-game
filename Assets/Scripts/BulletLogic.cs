@@ -28,6 +28,7 @@ public class BulletLogic : MonoBehaviour
         {
             var atm = other.GetComponent<AttributesManager>();
             atm.TakeDamage(10);
+            Destroy(gameObject);
         }
     }
 
