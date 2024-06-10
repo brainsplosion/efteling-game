@@ -927,6 +927,7 @@ MonoBehaviour:
   - {fileID: 1288625721}
   - {fileID: 620111855}
   model: {fileID: 0}
+  EndCredits: {fileID: 1781311657}
 --- !u!1001 &119298991
 PrefabInstance:
   m_ObjectHideFlags: 0

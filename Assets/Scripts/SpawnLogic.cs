@@ -14,6 +14,7 @@ public class SpawnLogic : MonoBehaviour
     public GameObject model; // new
     private bool readyToStart;
     // Start is called before the first frame update
+    public GameObject EndCredits;
     private void Start()
     {
         readyToStart = true;
@@ -30,7 +31,8 @@ public class SpawnLogic : MonoBehaviour
         //don't put code above this if statement, will result in errors.
         if (currentWaveDir >= waves.Length)
         {
-            Debug.Log("You live!!");
+             EndCredits.SetActive(true);
+                Debug.Log(EndCredits.name + " is now active.");
             return;
         }
 
