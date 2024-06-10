@@ -6,6 +6,7 @@ using UnityEngine.UI;
 
 public class DraggableItem2 : MonoBehaviour, IBeginDragHandler, IEndDragHandler, IDragHandler
 {
+    private bool lastP = false;
     Image image;
     CanvasGroup group;
     public Transform parentAfterDrag;
@@ -49,6 +50,14 @@ public class DraggableItem2 : MonoBehaviour, IBeginDragHandler, IEndDragHandler,
         fireBlastDescription.SetActive(false);
         equipOrUnequip.SetActive(false);
         capBiggerBranch2.SetActive(false);
+        if (transform.parent.CompareTag("Equipped") && !lastP)
+        {
+            lastP = true;
+        }
+        else if (transform.parent.CompareTag("Unequipped") && lastP)
+        {
+            lastP = false;
+        }
     }
 
 }

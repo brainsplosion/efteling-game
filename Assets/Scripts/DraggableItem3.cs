@@ -6,6 +6,7 @@ using UnityEngine.UI;
 
 public class DraggableItem3 : MonoBehaviour, IBeginDragHandler, IEndDragHandler, IDragHandler
 {
+    private bool lastP = false;
     Image image;
     CanvasGroup group;
     public Transform parentAfterDrag;
@@ -49,6 +50,16 @@ public class DraggableItem3 : MonoBehaviour, IBeginDragHandler, IEndDragHandler,
         speedDescription.SetActive(false);
         equipOrUnequip.SetActive(false);
         capBiggerBranch3.SetActive(false);
+        if (transform.parent.CompareTag("Equipped") && !lastP)
+        {
+            PlayerController.Instance.Speederer();
+            lastP = true;
+        }
+        else if (transform.parent.CompareTag("Unequipped") && lastP)
+        {
+            PlayerController.Instance.Slowerer();
+            lastP = false;
+        }
     }
 
 }

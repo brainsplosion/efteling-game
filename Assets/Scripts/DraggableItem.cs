@@ -6,6 +6,7 @@ using UnityEngine.UI;
 
 public class DraggableItem : MonoBehaviour, IBeginDragHandler, IEndDragHandler, IDragHandler
 {
+    private bool lastP = false;
     Image image;
     CanvasGroup group;
     public Transform parentAfterDrag;
@@ -49,6 +50,16 @@ public class DraggableItem : MonoBehaviour, IBeginDragHandler, IEndDragHandler, 
         swordLenghtDescription.SetActive(false);
         equipOrUnequip.SetActive(false);
         capBiggerBranch1.SetActive(false);
+        if (transform.parent.CompareTag("Equipped") && !lastP)
+        {
+            WeaponSizing.Instance.Biggerer();
+            lastP = true;
+        }
+        else if (transform.parent.CompareTag("Unequipped") && lastP)
+        {
+            WeaponSizing.Instance.Smallerer();
+            lastP = false;
+        }
     }
 
 }

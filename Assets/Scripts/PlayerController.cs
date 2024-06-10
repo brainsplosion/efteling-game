@@ -7,9 +7,11 @@ using UnityEngine.InputSystem;
 
 public class PlayerController : MonoBehaviour
 {
+    public static PlayerController Instance;
     private Vector2 _input;
     private bool sprinting;
     private CharacterController _characterController;
+    public BlastWave aoe;
     private Vector3 _direction;
 
     [SerializeField] private Animator animator;
@@ -17,9 +19,10 @@ public class PlayerController : MonoBehaviour
 
     [SerializeField] private float rotationSpeed = 500f;
     private Camera _mainCamera;
-    [SerializeField] private float speed;
+    //[SerializeField] private float speed;
 
     [SerializeField] private Movement movement;
+    //[SerializeField] private Movement speed;
 
     private float _gravity = -9.81f;
     [SerializeField] private float gravityMultiplier = 3.0f;
@@ -29,12 +32,27 @@ public class PlayerController : MonoBehaviour
     private int _numberOfJumps;
     [SerializeField] private int maxNumberOfJumps = 2;
 
+    public GameObject crossfire_big;
+    public GameObject crossfire_small;
+    public GameObject slash_big;
+    public GameObject slash_small;
+
     private void Awake()
     {
         _characterController = GetComponent<CharacterController>();
+        aoe = GetComponent<BlastWave>();
         _mainCamera = Camera.main;
         animator = GetComponent<Animator>();
         Cursor.lockState = CursorLockMode.Locked;
+        if (Instance == null)
+        {
+            Instance = this;
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
+
     }
 
     private void Update()
@@ -64,6 +82,7 @@ public class PlayerController : MonoBehaviour
             else if (Cursor.lockState == CursorLockMode.None)
                 Cursor.lockState = CursorLockMode.Locked;
         }
+        FlashButtons();
     }
 
     private void getInput()
@@ -155,6 +174,40 @@ public class PlayerController : MonoBehaviour
         yield return new WaitUntil(IsGrounded);
         animator.SetBool("Jumping", false);
         _numberOfJumps = 0;
+    }
+
+    public void Speederer()
+    {
+        movement.speed += 3;
+    }
+    public void Slowerer()
+    {
+        movement.speed -= 3;
+    }
+
+    private void FlashButtons()
+    {
+        if (Input.GetMouseButton(1))
+        {
+            crossfire_small.SetActive(false);
+            crossfire_big.SetActive(true);
+        }
+        else
+        {
+            crossfire_small.SetActive(true);
+            crossfire_big.SetActive(false);
+        }
+
+        if (Input.GetMouseButton(0))
+        {
+            slash_small.SetActive(false);
+            slash_big.SetActive(true);
+        }
+        else
+        {
+            slash_small.SetActive(true);
+            slash_big.SetActive(false);
+        }
     }
 
     private bool IsGrounded() => _characterController.isGrounded;
