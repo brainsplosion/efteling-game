@@ -7,6 +7,7 @@ public class AttributesManager : MonoBehaviour
     public float health = 200;
     public int attackDamage;
     //public GameObject healthManager = GameObject.Find("HealthManager");
+    public AudioSource hitting; 
 
 
     public void TakeDamage(float amount)
@@ -20,7 +21,7 @@ public class AttributesManager : MonoBehaviour
         {
             HealthManager.Instance.UpdateHealth(health);
         }
-
+       
         //var atm = healthManager.GetComponent<HealthManager>();
 
         Vector3 randomness = new Vector3(Random.Range(0f, 0.25f), Random.Range(0f, 0.25f), Random.Range(0f, 0.25f));

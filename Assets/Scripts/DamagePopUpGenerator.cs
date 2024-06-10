@@ -8,6 +8,7 @@ public class DamagePopUpGenerator : MonoBehaviour
 {
     public static DamagePopUpGenerator current;
     public GameObject prefab;
+
     private void Awake()
     {
         current = this;
@@ -28,7 +29,9 @@ public class DamagePopUpGenerator : MonoBehaviour
         temp.text = text;
         temp.faceColor = color;
 
+
         //Destroy timer
         Destroy(popup, 1f);
     }
+
 }

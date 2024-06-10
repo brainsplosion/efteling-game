@@ -368,6 +368,7 @@
 "Assets/Scripts/EnemyShoot.cs"
 "Assets/Scripts/Footsteps.cs"
 "Assets/Scripts/HealthManager.cs"
+"Assets/Scripts/HittingAudio.cs"
 "Assets/Scripts/InventoryItemSlot.cs"
 "Assets/Scripts/ItemSlot.cs"
 "Assets/Scripts/ItemSlot2.cs"

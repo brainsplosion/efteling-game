@@ -37,6 +37,8 @@ public class PlayerController : MonoBehaviour
     public GameObject slash_big;
     public GameObject slash_small;
 
+    public AudioSource hitting;
+
     private void Awake()
     {
         _characterController = GetComponent<CharacterController>();
@@ -202,11 +204,13 @@ public class PlayerController : MonoBehaviour
         {
             slash_small.SetActive(false);
             slash_big.SetActive(true);
+            hitting.enabled = true;
         }
         else
         {
             slash_small.SetActive(true);
             slash_big.SetActive(false);
+            hitting.enabled = false;
         }
     }
 
