@@ -52,10 +52,12 @@ public class DraggableItem2 : MonoBehaviour, IBeginDragHandler, IEndDragHandler,
         capBiggerBranch2.SetActive(false);
         if (transform.parent.CompareTag("Equipped") && !lastP)
         {
+            BlastWave.Instance.Change();
             lastP = true;
         }
         else if (transform.parent.CompareTag("Unequipped") && lastP)
         {
+            BlastWave.Instance.Return();
             lastP = false;
         }
     }
