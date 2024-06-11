@@ -193,6 +193,7 @@ public class PlayerController : MonoBehaviour
         {
             crossfire_small.SetActive(false);
             crossfire_big.SetActive(true);
+            BlastWave.Instance.Activate();
         }
         else
         {
