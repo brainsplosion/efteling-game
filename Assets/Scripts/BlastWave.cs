@@ -8,6 +8,8 @@ public class BlastWave : MonoBehaviour
     public Transform range;
     public Collider hit;
     public int dmg;
+    public float cooldown = 6f;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -26,13 +28,15 @@ public class BlastWave : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if (hit.enabled == true)
+            hit.enabled = !hit.enabled;
+        cooldown -= Time.deltaTime;
     }
-    private void LateUpdate()
+   /* private void LateUpdate()
     {
         if (hit.enabled == true)
             hit.enabled = !hit.enabled;
-    }
+    }*/
 
     void OnTriggerEnter(Collider other)
     {
@@ -40,6 +44,8 @@ public class BlastWave : MonoBehaviour
         {
             var attributesManager = other.GetComponent<AttributesManager>();
             attributesManager.TakeDamage(dmg);
+            other.GetComponent<EnemyBase>().Knockback(10);
+
         }
     }
 
@@ -51,6 +57,15 @@ public class BlastWave : MonoBehaviour
     public void Return()
     {
         dmg -= 6;
+    }
+
+    public void Activate()
+    {
+        if (cooldown <= 0)
+        {
+            hit.enabled = true;
+            cooldown = 6f;
+        }
     }
 
 
