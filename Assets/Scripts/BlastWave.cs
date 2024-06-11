@@ -44,6 +44,8 @@ public class BlastWave : MonoBehaviour
         {
             var attributesManager = other.GetComponent<AttributesManager>();
             attributesManager.TakeDamage(dmg);
+            other.GetComponent<EnemyBase>().Knockback(10);
+
         }
     }
 

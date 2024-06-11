@@ -12,6 +12,7 @@ public class PlayerController : MonoBehaviour
     private bool sprinting;
     private CharacterController _characterController;
     public BlastWave aoe;
+    public GameObject hitbox;
     private Vector3 _direction;
 
     [SerializeField] private Animator animator;
@@ -191,9 +192,12 @@ public class PlayerController : MonoBehaviour
     {
         if (Input.GetMouseButton(1))
         {
-            crossfire_small.SetActive(false);
-            crossfire_big.SetActive(true);
-            BlastWave.Instance.Activate();
+            if (BlastWave.Instance.cooldown <= 0)
+            {
+                crossfire_small.SetActive(false);
+                crossfire_big.SetActive(true);
+                BlastWave.Instance.Activate();
+            }
         }
         else
         {
@@ -205,13 +209,15 @@ public class PlayerController : MonoBehaviour
         {
             slash_small.SetActive(false);
             slash_big.SetActive(true);
-            hitting.enabled = true;
+            //hitting.enabled = true;
+            hitbox.GetComponent<Collider>().enabled = true;
         }
         else
         {
             slash_small.SetActive(true);
             slash_big.SetActive(false);
-            hitting.enabled = false;
+            //hitting.enabled = false;
+            hitbox.GetComponent<Collider>().enabled = false;
         }
     }
 

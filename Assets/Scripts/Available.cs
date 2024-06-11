@@ -16,7 +16,7 @@ public class Available : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        cd = BlastWave.Instance.cooldown;
+        //cd = BlastWave.Instance.cooldown;
         if (BlastWave.Instance.cooldown >=0)
         {
             img.color = Color.red;

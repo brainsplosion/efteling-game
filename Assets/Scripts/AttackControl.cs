@@ -18,6 +18,7 @@ public class AttackControl : MonoBehaviour
         }
         if(Input.GetKeyDown(KeyCode.Mouse1))
         {
+            //float cd = BlastWave.Instance.cooldown;
             anim.SetTrigger("Attack2");
         }
     }
