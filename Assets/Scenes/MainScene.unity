@@ -1389,6 +1389,7 @@ MonoBehaviour:
   - {fileID: 1288625721}
   - {fileID: 620111855}
   model: {fileID: 0}
+  EndCredits: {fileID: 0}
 --- !u!1001 &119298991
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -9063,7 +9064,7 @@ RectTransform:
   m_GameObject: {fileID: 791174294}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 2018088999}
@@ -14348,6 +14349,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: 100
   attackDamage: 0
+  hitting: {fileID: 0}
 --- !u!136 &1346872366
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -15146,6 +15148,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   aoe: {fileID: 0}
+  hitbox: {fileID: 0}
   animator: {fileID: 0}
   rotationSpeed: 500
   movement:
@@ -15161,6 +15164,7 @@ MonoBehaviour:
   crossfire_small: {fileID: 538172517}
   slash_big: {fileID: 694864213}
   slash_small: {fileID: 527765259}
+  hitting: {fileID: 0}
 --- !u!4 &1408183274
 Transform:
   m_ObjectHideFlags: 0
@@ -15235,6 +15239,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: 200
   attackDamage: 0
+  hitting: {fileID: 0}
 --- !u!114 &1408183278
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -17469,7 +17474,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 57d3285e97024be4b83d174143b8ae88, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  effect: {fileID: 0}
+  range: {fileID: 0}
+  hit: {fileID: 0}
   dmg: 20
+  cooldown: 6
 --- !u!135 &1566097784
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -20771,7 +20780,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -455.01077, y: -246.11948}
+  m_AnchoredPosition: {x: -455.01077, y: -220}
   m_SizeDelta: {x: 204.3488, y: 67.6965}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1983554348

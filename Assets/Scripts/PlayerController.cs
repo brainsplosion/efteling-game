@@ -96,6 +96,8 @@ public class PlayerController : MonoBehaviour
 
     private void updateAnimation()
     {
+        animator.SetFloat("_input.y", yInput);
+        animator.SetFloat("_input.x", xInput);
         if (_direction.x > 0 || _direction.z >0 || _direction.z >0 || _direction.z <0)
         {
             //moving in animator component becomes true

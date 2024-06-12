@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class BlastWave : MonoBehaviour
 {
+    public GameObject effect;
     public static BlastWave Instance;
     public Transform range;
     public Collider hit;
@@ -63,6 +64,7 @@ public class BlastWave : MonoBehaviour
     {
         if (cooldown <= 0)
         {
+            GameObject temp = Instantiate(effect, transform);
             hit.enabled = true;
             cooldown = 6f;
         }
